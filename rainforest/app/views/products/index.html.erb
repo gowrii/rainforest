@@ -1,7 +1,7 @@
 <h1>Products</h1>
 
 <% @products.each do |d| %>
-<div> <%= d[:name] %> </div>
+<div>  <%= link_to (d[:name]), "/products/#{d.id}" %></div>
 <div> <%= d[:description] %> </div>
 <div> <%= d.formatted_price %> </div>
 
