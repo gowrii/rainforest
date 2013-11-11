@@ -1,10 +1,18 @@
 class ProductsController < ApplicationController
+  before_filter :ensure_logged_in, :only => [:show]
+  before_filter :ensure_logged_in, :only => [:edit, :create, :show, :update, :destroy]
+            #dry out code by setting it as a before filter ensure logged in is in appication folder
+
   def index
     @products = Product.all
   end
 
   def show
     @product = Product.find(params[:id])
+
+    if current_user
+    @review = @product.reviews.build
+    end
   end
 
   def new
@@ -44,5 +52,8 @@ class ProductsController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:name, :description, :price_in_cents)
+  end
+  def load_product
+  @product = Product.find(params[:id])
   end
 end
