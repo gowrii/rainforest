@@ -11,3 +11,84 @@
  *= require_self
  *= require_tree .
  */
+aside, article, section, header, footer, nav {
+	display: block;
+}
+div, h1, h2, h3, p, img {
+	margin: 0;
+	padding: 0;
+}
+html {
+	background: #186127;
+}
+
+body {
+	margin: 0 auto;
+	width : 80%;
+	height: 1000px;
+	background: #FFFFFF ;
+}	
+	
+
+header {
+	background: #99CC00;
+	height: 90px;
+}
+
+.prod_name {
+	font-size: 25px;
+	text-decoration: none;
+	font-family: sans-serif;
+	padding-left: 20px;
+	padding-top:30px;
+	padding-bottom:5px;
+	
+}
+
+.prod_desc {
+	font-size: 20px;
+	font-family: sans-serif;
+	padding-left: 20px;
+}
+.prod_price {
+	padding-left: 20px;
+	font-size: 20px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #D6EB99;
+}
+
+.login {
+	float:right;
+	padding-right:20px;
+	font-size: 20px;
+	font-family: sans-serif;
+	padding-top: 20px;
+}
+
+.userinfo{
+
+	float:right;
+	padding-right:20px;
+	font-size: 20px;
+	font-family: sans-serif;
+	padding-top: 20px;
+}
+
+.prod_index {
+	padding-left: 20px;
+	padding-top: 0px;
+	font-family: sans-serif;
+	font-weight: normal;
+
+}
+
+.title {
+	font-size: 50px;
+	font-family: 'Cherry Swash';
+	padding-left: 20px;
+	padding-top:15px;
+}
+.label {
+	background: #F1FAB5;
+}
+

@@ -1,6 +1,6 @@
 <% if current_user %>
 
-  <h3>Reviews</h3>
+  <h3>Reviews</h3> <%= link_to "Main Product Page", products_path %> 
 
   <p>Reviews for <%= @product.name %></p>
 
@@ -9,16 +9,16 @@
       <%= review.comment %>
       <br>
       <% if review.user != nil %>
-        <em> by <%= review.user.name %></em>
+        <em> by <%= link_to (review.user.name), user_path(review.user) %></em>
         Added on: <%= review.created_at %>
       <% end %>
     </p>
   <% end %>
-<% end %>
+
  
   <h4>New Review</h4>
 
-  <%= form_for([@product, @review]) do |f| %>
+    <%= form_for([@product, @review]) do |f| %>
     <% if @review.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -26,7 +26,7 @@
         <ul>
         <% @review.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
-          <% end %>
+        <% end %>
         </ul>
       </div>
     <% end %>
@@ -42,5 +42,4 @@
 
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
-
-
+<% end %>

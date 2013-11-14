@@ -1,8 +1,9 @@
-<h1>Products</h1>
+<header><div class= "title">Rainforest</div></header>
+<div class= "label"><h1 class= "prod_index">Products</h1></div>
 
-<% @products.each do |d| %>
-<div>  <%= link_to (d[:name]), "/products/#{d.id}" %></div>
-<div> <%= d[:description] %> </div>
-<div> <%= d.formatted_price %> </div>
-
-<% end %>
+<div class= "body"> <% @products.each do |d| %> </div>
+<div class= "prod_name">  <%= link_to (d[:name]), product_path(d.id) %></div>
+<div class= "prod_desc"> <%= d[:description] %> </div>
+<div class= "prod_price"> $<%= d.formatted_price %> </div>
+<br/>
+<% end %></div>
